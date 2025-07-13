@@ -1,34 +1,54 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" prefix="og: http://ogp.me/ns#">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Почему именно я | Оксана Жужукина | Психолог-консультант</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Почему именно я | Оксана Жужукина | Психолог-консультант</title>
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Оксана Жужукина — психолог-консультант. Почему клиенты выбирают меня? Безоценочность, индивидуальный подход, безопасность и профессионализм." />
-    <meta property="og:title" content="Почему именно я | Оксана Жужукина" />
-    <meta property="og:description" content="Почему клиенты доверяют мне: безоценочная поддержка, научные методы, индивидуальный подход." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://вашдомен.рф/why-me.html" />
-    <meta property="og:image" content="img/seo-why-me.jpg" />
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+        content="Оксана Жужукина — психолог-консультант. Почему клиенты выбирают меня? Безоценочность, индивидуальный подход, безопасность и профессионализм." />
+  <link rel="canonical" href="https://вашдомен.рф/why-me.html" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <!-- Open Graph (для VK и Telegram) -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Почему именно я | Оксана Жужукина" />
+  <meta property="og:description" content="Почему клиенты доверяют мне: безоценочная поддержка, научные методы, индивидуальный подход." />
+  <meta property="og:url"         content="https://вашдомен.рф/why-me.html" />
+  <meta property="og:image"       content="https://вашдомен.рф/img/seo-why-me.jpg" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale"      content="ru_RU" />
 
-    <!-- Шрифты -->
-    <link rel="preconnect" href="https://fonts.googleapis.com " />
-    <link rel="preconnect" href="https://fonts.gstatic.com " crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-    <!-- Иконки -->
-    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css " />
+  <!-- Resource hints: preconnect к Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Стили -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/why-me.css">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
 
+  <!-- Иконки Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet" />
 
+  <!-- Preload критического CSS -->
+  <link
+    rel="preload"
+    href="css/main.css"
+    as="style"
+    onload="this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="css/main.css" />
+  </noscript>
+
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="css/why-me.css" />
 </head>
 <body>
 

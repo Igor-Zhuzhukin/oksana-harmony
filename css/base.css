@@ -14,36 +14,32 @@ html {
 /* 2. CSS-переменные */
 :root {
   /* Основные цвета */
-  --color-primary:      #2C3E50;   /* заголовки, текст */
-  --color-secondary:    #555555;   /* вспомогательный текст */
-  --color-white:        #FAFAFA;   /* основной фон */
-  
+  --color-primary:      #2C3E50;
+  --color-secondary:    #555555;
+  --color-white:        #FAFAFA;
+
   /* Акцентные цвета */
   --color-mint:         #A3E4D7;
   --color-mint-light:   #E8FCF9;
   --color-peach:        #FFDAB9;
-  --color-accent:       #FFAB00;   /* для иконок, подчёркиваний */
+  --color-accent:       #FFAB00;
 
   /* Градиенты */
-  --gradient-default:       linear-gradient(90deg, #FFF6F0 0%,   #E8FCF9 100%);
-  --gradient-header:        linear-gradient(90deg, #FFE8D6 0%,   #C8F9EC 100%);
-  --gradient-header-strong: linear-gradient(90deg, #FFDAB9 0%,   #A3E4D7 100%);
+  --gradient-content:       linear-gradient(180deg, #E8FCF9 0%,   #FFF6F0 100%);
+  --gradient-header:        linear-gradient(90deg,  #FFE8D6 0%,   #C8F9EC 100%);
+  --gradient-header-strong: linear-gradient(90deg,  #FFDAB9 0%,   #A3E4D7 100%);
   --gradient-footer:        linear-gradient(100deg, #FFDAB9 0%,  #A3E4D7 100%);
-  /* Нью-градиент для Issues Grid */ 
-  --gradient-issues:        linear-gradient(100deg, #FFDAB9 0%,  #A3E4D7 100%);
-  --gradient-content:       linear-gradient(180deg, #E8FCF9 0%, #FFF6F0 100%);
-    /* Фон и рамка для внутренних секций */
-  --section-bg:             #ffffff;
-  --section-border-color:   rgba(44, 62, 80, 0.08);
 
+  /* Разделитель между секциями */
+  --divider-height:         4px;
+  --divider-gradient:       linear-gradient(90deg, #A3E4D7 0%, #E8FCF9 100%);
 
-  /* Переходы */
-  --transition: 0.25s ease;
-  /* Радиус */
-  --radius: 12px;
+  /* Общие настройки */
+  --radius:                 12px;
+  --transition:             0.25s ease;
 }
 
-/* 3. Сброс отступов/шрифтов для body */
+/* 3. Сброс отступов и базовые стили */
 body {
   margin: 0;
   padding: 0;
