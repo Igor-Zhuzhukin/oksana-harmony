@@ -1,0 +1,80 @@
+/* ===================================================================
+   css/base.css — Переменные, сброс и типографика
+   =================================================================== */
+
+/* 1. Box sizing reset */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* 2. CSS-переменные */
+:root {
+  /* Основные цвета */
+  --color-primary:      #2C3E50;   /* заголовки, текст */
+  --color-secondary:    #555555;   /* вспомогательный текст */
+  --color-white:        #FAFAFA;   /* основной фон */
+  
+  /* Акцентные цвета */
+  --color-mint:         #A3E4D7;
+  --color-mint-light:   #E8FCF9;
+  --color-peach:        #FFDAB9;
+  --color-accent:       #FFAB00;   /* для иконок, подчёркиваний */
+
+  /* Градиенты */
+  --gradient-default:       linear-gradient(90deg, #FFF6F0 0%,   #E8FCF9 100%);
+  --gradient-header:        linear-gradient(90deg, #FFE8D6 0%,   #C8F9EC 100%);
+  --gradient-header-strong: linear-gradient(90deg, #FFDAB9 0%,   #A3E4D7 100%);
+  --gradient-footer:        linear-gradient(100deg, #FFDAB9 0%,  #A3E4D7 100%);
+  /* Нью-градиент для Issues Grid */ 
+  --gradient-issues:        linear-gradient(100deg, #FFDAB9 0%,  #A3E4D7 100%);
+  --gradient-content:       linear-gradient(180deg, #E8FCF9 0%, #FFF6F0 100%);
+    /* Фон и рамка для внутренних секций */
+  --section-bg:             #ffffff;
+  --section-border-color:   rgba(44, 62, 80, 0.08);
+
+
+  /* Переходы */
+  --transition: 0.25s ease;
+  /* Радиус */
+  --radius: 12px;
+}
+
+/* 3. Сброс отступов/шрифтов для body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-primary);
+  background-color: var(--color-white);
+}
+
+/* 4. Типографика заголовков */
+h1, h2, h3 {
+  margin: 0 0 0.6em;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.3;
+}
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.2rem; }
+
+/* 5. Параграфы */
+p {
+  margin: 0 0 1.2em;
+}
+
+/* 6. Адаптивная типографика */
+@media (max-width: 768px) {
+  h1 { font-size: 1.7rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.1rem; }
+  body { font-size: 0.97rem; }
+}

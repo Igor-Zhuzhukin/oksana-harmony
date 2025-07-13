@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Оксана Жужукина | Психолог-консультант</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Оксана Жужукина — психолог-консультант. Помощь в самопознании, уверенности и гармонии жизни." />
+    <meta property="og:title" content="Оксана Жужукина | Психолог-консультант" />
+    <meta property="og:description" content="Помощь в самопознании, уверенности и гармонии жизни." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://вашдомен.рф" />
+    <meta property="og:image" content="img/seo-image.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com ">
+    <link rel="preconnect" href="https://fonts.gstatic.com " crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Иконки -->
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css " />
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <div id="header"></div>
+
+<!-- Hero Section -->
+<section class="section page-hero">
+    <div class="container">
+        <h1>Приглашаю вас отправиться в путешествие к самому себе</h1>
+    </div>
+</section>
+
+<!-- Кратко о проблеме -->
+<main class="section index-content">
+    <div class="container">
+
+        <section id="about" class="section problem">
+                <p class="subtitle">Психологическое сопровождение к гармонии, пониманию себя и уверенности в жизни.</p>
+            <div class="hero-buttons">
+                <a href="services.html#form" class="btn btn-primary">Начать путешествие</a>
+                <a href="#about" class="btn btn-secondary">Узнать больше</a>
+            </div>
+            <h2>Забыли себя среди повседневности?</h2>
+            <p class="problem-text">Иногда мы теряем дорогу среди забот и сомнений. Важно остановиться, прислушаться к себе, чтобы двигаться дальше уверенно и осознанно. Психологическое консультирование — ваш проводник на этом пути.</p>        
+        </section>
+
+     <!-- Ключевые преимущества -->
+     <section class="section benefits">
+        <div class="container">
+            <h2>Ваше пространство для изменений</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-comments"></i></div>
+                    <h3>Безоценочность</h3>
+                    <p>Ваши правила, ваши чувства. Моя задача — поддержка и профессиональные рекомендации без осуждения.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-user"></i></div>
+                    <h3>Индивидуальность</h3>
+                    <p>Каждая ситуация уникальна. Решения и методы подбираются только под ваши цели и особенности.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Безопасность</h3>
+                    <p>Полная конфиденциальность и уважение ваших границ — основа нашей работы.</p>
+                </div>
+            </div>
+        </div>
+     </section>
+
+     <!-- Мини-тест и форма -->
+     <section id="test" class="section">
+        <div class="container">
+            <h2 class="text-center">Мини-тест:<br>Насколько вы сейчас в гармонии с собой?</h2>
+            <div class="text-center">
+                <button id="startTestBtn" class="btn btn-secondary">Пройти тест</button>
+            </div>
+
+            <div id="testBlock" hidden>
+                <form id="miniTestForm">
+                    <fieldset>
+                        <legend>Отметьте, что вам откликается:</legend>
+                        <label><input type="checkbox" name="q1" value="1"> Мне сложно понять, что я чувствую на самом деле.</label>
+                        <label><input type="checkbox" name="q2" value="1"> Я часто думаю, что «надо собраться», но не получается.</label>
+                        <label><input type="checkbox" name="q3" value="1"> У меня мало энергии, даже когда высыпаюсь.</label>
+                        <label><input type="checkbox" name="q4" value="1"> Я чувствую вину или тревогу, когда думаю о себе.</label>
+                        <label><input type="checkbox" name="q5" value="1"> Мне тяжело быть собой рядом с близкими.</label>
+                        <label><input type="checkbox" name="q6" value="1"> Я давно не испытывал(а) радости от простых вещей.</label>
+                    </fieldset>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Узнать результат</button>
+                    </div>
+                </form>
+
+                <div id="testResult" class="text-center" hidden></div>
+
+                <form id="contactForm" hidden class="booking-form-content">
+                    <h3>Записаться на бесплатную консультацию</h3>
+                    
+                    <label>Имя*:<br>
+                        <input type="text" name="name" required>
+                    </label><br>
+                    <label>Телефон*:<br>
+                        <input type="tel" name="phone" required>
+                    </label><br>
+                    <label style="display: flex; align-items: center;">
+                        <input type="checkbox" required style="margin-right:8px;">
+                        Я даю согласие на обработку персональных данных
+                    </label><br><br>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                    <p style="font-size: 14px; color: #777; margin-top: 10px;">
+                        После отправки я свяжусь с вами в течение 24 часов.
+                    </p>
+                </form>
+            </div>
+        </div>
+     </section>
+    </div> 
+</main>
+
+
+    <!-- Футер -->
+    <div id="footer"></div>
+
+    <!-- Подключаемые скрипты -->
+    <script type="module" src="js/main.js"></script>
+
+</body>
+</html>

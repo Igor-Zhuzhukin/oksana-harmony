@@ -1,0 +1,6 @@
+/* === Issues Grid Container: фон и отступы === */
+.issues-grid {
+  background-color: var(--color-mint-light);  /* мягкий мятный фон */
+  padding: 40px 24px;                         /* внутренняя обводка */
+  border-radius: 16px;                        /* скруглённые углы */
+}

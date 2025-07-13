@@ -1,0 +1,124 @@
+/* ===== HEADER: Адаптив ===== */
+@media (max-width: 700px) {
+  h1 { font-size: 1.35rem; }
+  .header { min-height: 54px; }
+  .logo { font-size: 1.08rem; }
+  .nav ul { gap: 0.6em; }
+}
+
+@media (max-width: 600px) {
+  .header, .footer {
+    padding: 0 6px;
+  }
+}
+
+/* ===== NAVIGATION: Адаптив ===== */
+@media (max-width: 1000px) {
+  .nav { display: none; }
+  .nav-toggle { display: block; margin-left: auto; }
+  .logo { margin-right: 0; }
+  .header .container { min-height: 54px; }
+
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,241,230,0.98);
+    z-index: 1010;
+    transition: opacity var(--transition);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 2em;
+  }
+}
+
+
+/* ===== FOOTER: Адаптив ===== */
+@media (max-width: 900px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-social, .footer-nav, .footer-cta {
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-nav ul li {
+    display: inline-block;
+    margin: 0 8px 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer, .header {
+    padding: 0 8px;
+  }
+
+  .footer-cta .btn {
+    width: 100%;
+  }
+
+  .footer {
+    border-radius: 16px 16px 0 0;
+  }
+
+  .footer::after {
+    border-radius: 0 0 16px 16px;
+  }
+}
+
+/* ===== Адаптивные кнопки ===== */
+@media (max-width: 600px) {
+  .btn,
+  .btn-primary,
+  .btn-outline {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+}
+
+
+/** свайп  **/
+
+@media (hover: none) and (pointer: coarse) {
+  .docs-lightbox-caption::after {
+    content: " Свайпните ↔ для листания";
+    display: block;
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 0 12px;             /* чуть меньше боковых отступов на мобильных */
+    font-size: 1rem;             /* подкорректировать размер шрифта */
+  }
+}
+
+
+/* === Адаптив для Issues Grid === */
+@media (max-width: 768px) {
+  .issues-grid {
+    flex-direction: column; /* колонки становятся подряд */
+    gap: 24px;
+  }
+}

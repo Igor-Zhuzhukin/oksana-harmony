@@ -1,0 +1,57 @@
+/* Lightbox для документов */
+.docs-lightbox-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+.docs-lightbox-overlay.open {
+  display: flex;
+}
+.docs-lightbox-content {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+}
+.docs-lightbox-img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.docs-lightbox-close,
+.docs-lightbox-prev,
+.docs-lightbox-next {
+  position: absolute;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.docs-lightbox-close:hover,
+.docs-lightbox-prev:hover,
+.docs-lightbox-next:hover {
+  opacity: 1;
+}
+.docs-lightbox-close {
+  top: -10px;
+  right: -10px;
+}
+.docs-lightbox-prev {
+  top: 50%; left: -40px;
+  transform: translateY(-50%);
+}
+.docs-lightbox-next {
+  top: 50%; right: -40px;
+  transform: translateY(-50%);
+}
+.docs-lightbox-caption {
+  color: white;
+  text-align: center;
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,80 @@
+/* ====== Section: Базовый ритм ====== */
+
+.section {
+  padding: 60px 0;
+}
+
+/* Расстояние между секциями */
+.section + .section {
+  margin-top: 40px;
+}
+
+/* ====== Модификаторы отступов ====== */
+
+.section.section-tight {
+  padding: 40px 0;
+}
+
+.section.section-loose {
+  padding: 100px 0;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .section {
+    padding: 48px 0;
+  }
+
+  .section.section-loose {
+    padding: 80px 0;
+  }
+
+  .section.section-tight {
+    padding: 32px 0;
+  }
+}
+
+
+/* === CONTENT WRAPPER === */
+/* Берём любой <main> с классом ending "-content" */
+main.section[class$="-content"] {
+  background: var(--gradient-content);
+  padding: 80px 0;             /* отступы сверху/снизу по вкусу */
+}
+main.section[class$="-content"] .container {
+  position: relative;          /* чтобы псевдо-элементы разделителей работали */
+  padding: 0 16px;             /* уже есть свои, но на крайний случай */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === Разделитель между секциями === */
+main.section[class$="-content"] .container > .section + .section {
+  /* убираем ненужный отступ */
+  margin-top: 0;
+}
+/* и вместо него вставляем «художество» */
+main.section[class$="-content"] .container > .section + .section::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: var(--divider-height);
+  background: var(--divider-gradient);
+  margin-bottom: 32px;  /* расстояние от разделителя до содержимого следующей секции */
+}
+
+
+/* ----- Issues Grid Layout ----- */
+.issues-grid {
+  display: flex;
+  gap: 32px;        /* расстояние между колонками */
+  align-items: flex-start;
+}
+
+.issues-column {
+  flex: 1;          /* равная ширина колонок */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;        /* расстояние между карточками */
+}
+

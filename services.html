@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Записаться | Оксана Жужукина | Психолог-консультант</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Оксана Жужукина — психолог-консультант. Запишитесь на бесплатную консультацию или индивидуальную сессию онлайн." />
+    <meta property="og:title" content="Записаться | Оксана Жужукина" />
+    <meta property="og:description" content="Бесплатная консультация и запись на индивидуальные сессии онлайн с психологом Оксаной Жужукиной." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://вашдомен.рф/services.html" />
+    <meta property="og:image" content="img/seo-services.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com " />
+    <link rel="preconnect" href="https://fonts.gstatic.com " crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Иконки -->
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css " />
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/services.css">
+
+</head>
+<body>
+
+    <!-- Шапка сайта -->   
+    <div id="header"></div>
+
+   <!-- Hero Section -->
+<section class="section page-hero">
+    <div class="container">
+        <h1>Записаться на консультацию</h1>
+        <p>Начните ваше путешествие к себе уже сегодня</p>
+    </div>
+</section>
+
+<!-- Основной контент -->
+<main class="section services-content">
+    <div class="container">
+        <!-- Блок: Бесплатная ознакомительная консультация -->
+        <section class="section service-card free-consultation">
+            <h2>Бесплатная ознакомительная консультация</h2>
+            <ul class="service-features">
+                <li><i class="fas fa-clock"></i> <strong>Продолжительность:</strong> до 15 минут</li>
+                <li><i class="fas fa-phone"></i> <strong>Формат:</strong> телефонный разговор</li>
+                <li><i class="fas fa-bullseye"></i> <strong>Цель:</strong> понять, сможем ли мы эффективно работать вместе</li>
+            </ul>
+            <p>Это возможность познакомиться, обсудить ваш запрос, задать любые вопросы о моей работе и понять, подходим ли мы друг другу.</p>
+        </section>
+
+        <!-- Блок: Индивидуальная консультация -->
+        <section class="section service-card individual-consultation">
+            <h2>Индивидуальная консультация</h2>
+            <ul class="service-features">
+                <li><i class="fas fa-laptop"></i> <strong>Онлайн-сессия</strong></li>
+                <li><i class="fas fa-ruble-sign"></i> <strong>Стоимость:</strong> 2000 ₽</li>
+                <li><i class="fas fa-clock"></i> <strong>Продолжительность:</strong> 50 минут</li>
+                <li><i class="fas fa-puzzle-piece"></i> <strong>Платформы:</strong> Zoom, Telegram, Google Meet</li>
+                <li><i class="fas fa-calendar-alt"></i> <strong>Время приёма:</strong> по индивидуальному согласованию</li>
+                <li><i class="fas fa-lock"></i> <strong>Полная конфиденциальность</strong></li>
+            </ul>
+            <p>Это основная форма нашей работы, где мы глубоко погружаемся в ваш запрос и находим пути решения.</p>
+            <div class="tags">
+                <span class="tag">Индивидуальный подход</span>
+                <span class="tag">Удобное время</span>
+                <span class="tag">Работа из дома</span>
+            </div>
+        </section>
+
+        <!-- Форма записи -->
+        <section id="contactForm" class="section consultation-form">
+            <h2>Записаться на консультацию</h2>
+            <form action="#" method="post" class="booking-form-content">
+                <!-- Имя -->
+                <div class="form-group">
+                    <label for="name">Имя*</label>
+                    <input type="text" id="name" name="name" required placeholder="Ваше имя">
+                    <div id="name-error" class="error-message">Введите корректное имя</div>
+                </div>
+
+                <!-- Телефон -->
+                <div class="form-group">
+                    <label for="contact">Телефон*</label>
+                    <input type="text" id="contact" name="contact" required placeholder="+7 ___ ___ __ __">
+                    <div id="contact-error" class="error-message">Введите корректный телефон</div>
+                </div>
+
+                <!-- Чекбокс согласия -->
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" name="consent" required>
+                        Я согласен(а) с <a href="privacy-policy.html" target="_blank">политикой конфиденциальности</a>
+                    </label>
+                </div>
+
+                <!-- Кнопка отправки -->
+                <button type="submit" class="btn btn-primary">Записаться</button>
+            </form>
+        </section>
+    </div>
+</main>
+
+    <!-- Футер -->
+
+   <div id="footer"></div>
+
+    <!-- Подключаемые скрипты -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
