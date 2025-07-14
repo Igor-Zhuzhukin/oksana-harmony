@@ -1,0 +1,15 @@
+
+
+/* ==========================================================================
+   Section: About — фоновая заливка градиентом
+   ========================================================================== */
+.section.about-section {
+  /* Принудительно убираем всё, что могло сбить фон */
+  background: none !important;
+  /* Задаём желаемый градиент */
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  /* Отступы сверху-снизу, чтобы градиент был виден */
+  padding: 60px 16px !important;
+}

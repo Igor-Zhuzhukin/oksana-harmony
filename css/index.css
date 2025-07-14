@@ -1,0 +1,197 @@
+/* ==========================================================================
+   Section: Hero Intro (#about)
+   ========================================================================== */
+
+/* 1. Блок тезисного Intro с фоном-героем */
+#about {
+  /* Фон: градиент или картинка */
+  background: var(--gradient-content);                   /* базовый градиент :contentReference[oaicite:4]{index=4} */
+  background-size: cover;                                /* покрытие всего блока :contentReference[oaicite:5]{index=5} */
+  background-position: center;                           /* выравнивание центра :contentReference[oaicite:6]{index=6} */
+  padding: 80px 16px;                                    /* вертикальные отступы */
+  text-align: center;                                    /* центрирование текста */
+  border-radius: var(--radius);                          /* скругление углов */
+  color: var(--color-primary);                           /* цвет текста */
+}
+
+/* 2. Подзаголовок — коротко и эффективно */
+#about .subtitle {
+  display: block;
+  font-size: 1.125rem;                                   /* до 7 слов и 20 символов предлагают дизайнеры :contentReference[oaicite:7]{index=7} */
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: var(--color-secondary);
+}
+
+/* 3. CTA-кнопки: primary + secondary */
+#about .hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;                                             /* расстояние между кнопками */
+  margin-bottom: 2rem;
+}
+#about .hero-buttons .btn {
+  min-width: 160px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  transition: background var(--transition), transform var(--transition);
+}
+#about .btn-primary {
+  background: var(--color-mint);
+  color: #fff;
+}
+#about .btn-secondary {
+  background: transparent;
+  border: 2px solid var(--color-mint);
+  color: var(--color-primary);
+}
+@media (hover: hover) {
+  #about .btn-primary:hover {                            /* акцент на primary CTAs :contentReference[oaicite:8]{index=8} */
+    transform: translateY(-2px);
+    background: var(--color-primary);
+  }
+  #about .btn-secondary:hover {
+    background: var(--color-mint-light);
+  }
+}
+
+/* 4. Основной заголовок — чётко и запоминающе */
+#about h2 {
+  font-size: 2.2rem;                                     /* эффективный размер заголовка :contentReference[oaicite:9]{index=9} */
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+/* 5. Текст-описание — кратко и по делу */
+#about .problem-text {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-secondary);
+}
+
+/* 6. Адаптив: мобильная вёрстка */
+@media (max-width: 768px) {
+  #about {
+    padding: 60px 12px;                                  /* уменьшаем отступы на узких экранах :contentReference[oaicite:10]{index=10} */
+  }
+  #about h2 {
+    font-size: 1.75rem;
+  }
+  #about .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  #about .hero-buttons {
+    gap: 0.5rem;
+  }
+}
+
+/* ==========================================================================
+   Section: Benefits — force the hero gradient background
+   ========================================================================== */
+.section.benefits {
+  /* отменяем любой ранее заданный фон */
+  background: none !important;
+  /* ставим желаемый градиент */
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  /* сохраняем отступы и скругления */
+  padding: 60px 0 !important;
+  border-radius: var(--radius) !important;
+}
+
+/* ==========================================================================
+   Section: Benefits Cards — яркий градиент, иконки и анимация
+   ========================================================================== */
+.index-content .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* отзывчивые колонки :contentReference[oaicite:0]{index=0} */
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+/* 1) Градиенты для карточек */
+.index-content .benefit-card {
+  position: relative;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* плавные микровзаимодействия :contentReference[oaicite:1]{index=1} */
+}
+/* задаём контекстный градиент через nth-child */
+.index-content .benefit-card:nth-child(1) {
+  background-image: linear-gradient(135deg, #A3E4D7 0%, #E8FCF9 100%); /* безоценочность :contentReference[oaicite:2]{index=2} */
+}
+.index-content .benefit-card:nth-child(2) {
+  background-image: linear-gradient(135deg, #FFDAB9 0%, #FFAB00 100%); /* индивидуальность :contentReference[oaicite:3]{index=3} */
+}
+.index-content .benefit-card:nth-child(3) {
+  background-image: linear-gradient(135deg, #264653 0%, #2C3E50 100%); /* безопасность :contentReference[oaicite:4]{index=4} */
+}
+.index-content .benefit-card {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* 2) Акцентная обёртка иконки с пульсацией */
+.index-content .benefit-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.85);
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  color: var(--color-primary);
+  animation: pulse 2s infinite; /* базовая анимация :contentReference[oaicite:5]{index=5} */
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+/* 3) Hover-эффект для карточек */
+@media (hover: hover) {
+  .index-content .benefit-card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15); /* усиленная тень на hover :contentReference[oaicite:6]{index=6} */
+  }
+}
+
+/* 4) Контент внутри карточек */
+.index-content .benefit-card h3 {
+  margin: 0.75rem 0 0.5rem;
+  font-size: 1.25rem;
+  color: #fff; /* на градиентном фоне — белый текст :contentReference[oaicite:7]{index=7} */
+}
+.index-content .benefit-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+}
+
+/* 5) Адаптив для мобильных */
+@media (max-width: 768px) {
+  .index-content .benefits-grid {
+    grid-template-columns: 1fr; /* одна колонка на узких экранах :contentReference[oaicite:8]{index=8} */
+  }
+  .index-content .benefit-card {
+    padding: 1.5rem 1rem;
+  }
+  .index-content .benefit-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .index-content .benefit-card h3 {
+    font-size: 1.15rem;
+  }
+}
+

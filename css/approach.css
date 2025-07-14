@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Section: Methods — фоновая заливка градиентом
+   ========================================================================== */
+.section.methods {
+  /* Сбрасываем любые предыдущие фоны */
+  background: none !important;
+  /* Применяем градиент из переменной */
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  /* Отступы сверху/снизу */
+  padding: 60px 16px !important;
+}

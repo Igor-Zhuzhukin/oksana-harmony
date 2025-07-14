@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Section: Free Consultation — фоновая заливка градиентом
+   ========================================================================== */
+.section.service-card.free-consultation {
+  background: none !important;
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 60px 16px !important;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+/* ==========================================================================
+   Section: Individual Consultation — фоновая заливка градиентом
+   ========================================================================== */
+.section.service-card.individual-consultation {
+  background: none !important;
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 60px 16px !important;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+/* ==========================================================================
+   Section: Consultation Form — фоновая заливка градиентом
+   ========================================================================== */
+.section.consultation-form {
+  background: none !important;
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 60px 16px !important;
+  border-radius: var(--radius);
+}
+

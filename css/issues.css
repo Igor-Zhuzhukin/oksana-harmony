@@ -1,6 +1,13 @@
-/* === Issues Grid Container: фон и отступы === */
-.issues-grid {
-  background-color: var(--color-mint-light);  /* мягкий мятный фон */
-  padding: 40px 24px;                         /* внутренняя обводка */
-  border-radius: 16px;                        /* скруглённые углы */
+/* ==========================================================================
+   Section: Issues — фоновая заливка градиентом
+   ========================================================================== */
+.section.issues-grid {
+  /* Сбрасываем прежние фоны */
+  background: none !important;
+  /* Применяем тот же градиент, что и в геро-блоках */
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  /* Отступы сверху и снизу */
+  padding: 60px 16px !important;
 }

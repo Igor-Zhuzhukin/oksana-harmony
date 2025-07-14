@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Section: Advantages — фоновая заливка градиентом
+   ========================================================================== */
+.section.advantages {
+  background: none !important;
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 60px 16px !important;
+}
+
+/* ==========================================================================
+   Section: Foundation — фоновая заливка градиентом
+   ========================================================================== */
+.section.foundation {
+  background: none !important;
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 60px 16px !important;
+}

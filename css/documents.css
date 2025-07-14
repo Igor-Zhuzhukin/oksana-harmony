@@ -1,4 +1,130 @@
-/* Lightbox для документов */
+/* ==========================================================================
+   CSS for about.html and related sections
+   ========================================================================== */
+
+/* Base gradient for all hero/background sections */
+:root {
+  /* Ensure these variables exist */
+  --gradient-content: linear-gradient(180deg, #E8FCF9 0%, #FFF6F0 100%);
+  --radius: 12px;
+}
+
+/* ==========================================================================
+   Section: Education and Qualification (.about-section)
+   ========================================================================== */
+.section.about-section {
+  background: none !important;
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 60px 16px !important;
+  border-radius: var(--radius) !important;
+  text-align: center;
+  color: var(--color-primary);
+}
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.about-section h2 .fa-graduation-cap {
+  color: var(--color-mint);
+  font-size: 2.5rem;
+  animation: icon-bounce 2s infinite;
+}
+
+/* ==========================================================================
+   Section: Methods and Techniques (.methods)
+   ========================================================================== */
+.section.methods {
+  background: none !important;
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 60px 16px !important;
+  border-radius: var(--radius) !important;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Section: Issues Grid (.issues-grid)
+   ========================================================================== */
+.section.issues-grid {
+  background: none !important;
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 60px 16px !important;
+  border-radius: var(--radius) !important;
+}
+
+/* ==========================================================================
+   Section: Advantages (.advantages)
+   ========================================================================== */
+.section.advantages {
+  background: none !important;
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 60px 16px !important;
+  border-radius: var(--radius) !important;
+}
+
+/* ==========================================================================
+   Section: Foundation (.foundation)
+   ========================================================================== */
+.section.foundation {
+  background: none !important;
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 60px 16px !important;
+  border-radius: var(--radius) !important;
+}
+
+/* ==========================================================================
+   Section: Service Cards — Free & Individual Consultation
+   ========================================================================== */
+.section.service-card.free-consultation,
+.section.service-card.individual-consultation {
+  background: none !important;
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 60px 16px !important;
+  border-radius: var(--radius) !important;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Section: Consultation Form (.consultation-form)
+   ========================================================================== */
+.section.consultation-form {
+  background: none !important;
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 60px 16px !important;
+  border-radius: var(--radius) !important;
+}
+
+/* ==========================================================================
+   Section: Documents Gallery (.documents-gallery)
+   ========================================================================== */
+.section.documents-gallery {
+  background: none !important;
+  background-image: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 60px 16px !important;
+  border-radius: var(--radius) !important;
+}
+
+/* ==========================================================================
+   Lightbox for documents
+   ========================================================================== */
 .docs-lightbox-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -7,18 +133,22 @@
   align-items: center;
   justify-content: center;
   z-index: 10000;
+  overflow: hidden;
 }
 .docs-lightbox-overlay.open {
   display: flex;
 }
 .docs-lightbox-content {
   position: relative;
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
 }
 .docs-lightbox-img {
   width: 100%;
   height: auto;
+  max-height: 100%;
+  object-fit: contain;
   border-radius: 4px;
 }
 .docs-lightbox-close,
@@ -54,4 +184,173 @@
   color: white;
   text-align: center;
   margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   Keyframe animations
+   ========================================================================== */
+@keyframes icon-bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+
+/* Центрирование карточек в галерее документов */
+.documents-gallery {
+  /* уже есть display: grid */
+  justify-items: center;    /* выравнивает содержимое каждой ячейки по центру */
+  /* при необходимости: */
+  justify-content: center;  /* центрирует сам grid внутри контейнера */
+}
+
+/* Если карточки слишком узкие, можно задать им фиксированную ширину */
+.document-card {
+  width: 280px;             /* или min-width, или max-width по вкусу */
+  margin: 0;                /* сбрасываем авто-отступы */
+}
+
+
+/* ==========================================================================
+   Section: Verification Info — принудительный жёлтый градиент
+   ========================================================================== */
+section.verification-info {
+  /* Убираем старый фон, на всякий случай */
+  background: none !important;  
+  /* Задаём новый жёлтый градиент */
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 244, 219, 0.95) 0%,
+    rgba(255, 230, 185, 0.95) 100%
+  ) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 40px 16px !important;
+  border-radius: var(--radius) !important;
+}
+
+/* ==========================================================================
+   Section: Verification Info — выравнивание и анимация
+   ========================================================================== */
+section.verification-info {
+  display: flex !important;
+  align-items: center !important;       /* центр по вертикали */
+  justify-content: center !important;   /* центр по горизонтали */
+  gap: 1rem !important;                 /* расстояние между иконкой и текстом */
+  text-align: left !important;
+}
+
+/* Иконка проверочных данных */
+section.verification-info .info-icon {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  animation: icon-spin 4s linear infinite !important;  /* вращение */
+}
+
+/* Контент */
+section.verification-info .info-content {
+  max-width: 800px;
+}
+
+/* Повторно задаём keyframes, если нужно */
+@keyframes icon-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Адаптив: на узких экранах — в колонку */
+@media (max-width: 768px) {
+  section.verification-info {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+  section.verification-info .info-icon {
+    margin-bottom: 1rem !important;
+  }
+}
+
+
+
+/* ========================================================================== 
+   Убираем псевдо-разделитель перед verification-info 
+   ========================================================================== */
+.main .container > .section + .section.verification-info::before {
+  content: none !important;
+}
+
+/* ========================================================================== 
+   Центрируем содержимое внутри секции и убираем смещение 
+   ========================================================================== */
+section.verification-info {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 40px 16px !important;
+}
+
+/* Если нужно точнее ограничить ширину текста */
+section.verification-info .info-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Восстанавливаем анимацию иконки */
+section.verification-info .info-icon {
+  animation: icon-spin 4s linear infinite !important;
+}
+
+
+/* Добавляем внутренний отступ секции, чтобы иконка не прилипала к краю */
+section.verification-info {
+  padding-left: 60px !important;   /* увеличиваем левый padding */
+  padding-right: 60px !important;  /* симметрично и справа */
+}
+
+/* Если нужно более аккуратно — только иконке */
+section.verification-info .info-icon {
+  margin-left: 1rem !important;    /* или любое другое значение */
+}
+
+
+/* ==========================================================================
+   Section: Intro Highlight — градиентная рамка по всему периметру
+   ========================================================================== */
+main.documents-content .container > .intro-section {
+  /* Сброс старых рамок */
+  border: 4px solid transparent !important;
+
+  /* Градиентная рамка: золото → лаймовый */
+  border-image: linear-gradient(
+    45deg,
+    #FFD700 0%,
+    #32CD32 100%
+  ) 1 !important;
+
+  /* Отступы, скругления и центровка */
+  margin: 0 auto !important;
+  padding: 1.5rem !important;
+  max-width: none !important;
+  background-color: var(--radius) !important; /* или любой нейтральный фон */
+  border-radius: var(--radius) !important;
+  text-align: center !important;
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Адаптив: сохраняем рамку и отступы на мобильных */
+@media (max-width: 600px) {
+  main.documents-content .container > .intro-section {
+    padding: 1rem !important;
+    border-width: 3px !important;
+  }
 }
