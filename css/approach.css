@@ -11,3 +11,81 @@
   /* Отступы сверху/снизу */
   padding: 60px 16px !important;
 }
+
+/* ==========================================================================
+   Section: Intro Highlight в approach-content — надёжная заливка фоном
+   ========================================================================== */
+main.approach-content .container > .intro-section {
+  /* Сбрасываем всё, что могло мешать фону */
+  background: none !important;
+  /* Задаём именно нужный градиент (ваш стандартный) */
+  background: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+
+  /* Отступы и центрирование */
+  margin: 0 auto !important;
+  padding: 1.5rem !important;
+  max-width: none !important;
+  border-radius: var(--radius) !important;
+  text-align: center !important;
+
+  /* Сброс унаследованных margin между секциями */
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+}
+
+/* ==========================================================================
+   Section: Intro Highlight в approach-content — градиентная рамка
+   ========================================================================== */
+main.approach-content .container > .intro-section {
+  /* Оставляем фон от предыдущего правила */
+
+  /* Добавляем прозрачную основу для рамки */
+  border: 4px solid transparent !important;
+  /* Накладываем градиент на рамку */
+  border-image: linear-gradient(
+    45deg,
+    rgba(255, 230, 185, 0.95) 0%,
+    rgba(163, 228, 215, 0.95) 100%
+  ) 1 !important;
+}
+
+/* Адаптив: уменьшаем толщину рамки на мобильных */
+@media (max-width: 600px) {
+  main.approach-content .container > .intro-section {
+    border-width: 2px !important;
+  }
+}
+
+
+/* ==========================================================================
+   Section: About Call-to-Action (.approach-content) — градиентная рамка «как вверху»
+   ========================================================================== */
+main.approach-content .approach-cta {
+  /* Обнуляем фон, если нужно оставить прозрачным */
+  background: transparent !important;
+
+  /* Основа для градиентной рамки */
+  border: 4px solid transparent !important;
+
+  /* Градиентная рамка: персиково-зеленый переход под тем же углом */
+  border-image: linear-gradient(
+    45deg,
+    rgba(255, 230, 185, 0.95) 0%,
+    rgba(163, 228, 215, 0.95) 100%
+  ) 1 !important;
+
+  /* Сохраняем скругления и отступы */
+  border-radius: var(--radius) !important;
+  padding: 3rem 1.5rem !important;
+  text-align: center !important;
+  margin: 2rem 0 !important;
+}
+
+/* Адаптив: уменьшаем толщину рамки на мобильных */
+@media (max-width: 600px) {
+  main.approach-content .approach-cta {
+    border-width: 2px !important;
+  }
+}

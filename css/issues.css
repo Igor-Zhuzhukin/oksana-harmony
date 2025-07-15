@@ -11,3 +11,71 @@
   /* Отступы сверху и снизу */
   padding: 60px 16px !important;
 }
+
+
+/* ==========================================================================
+   Section: Intro Highlight в issues-content — фон + градиентная рамка
+   ========================================================================== */
+/* 1) Фоновая заливка градиентом */
+main.issues-content .container > .intro-section {
+  background: var(--gradient-content) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 1.5rem 1rem !important;
+  border-radius: var(--radius) !important;
+  margin: 0 auto 2rem !important;
+  max-width: none !important;
+  text-align: center !important;
+}
+
+/* 2) Градиентная рамка по периметру */
+main.issues-content .container > .intro-section {
+  border: 4px solid transparent !important;
+  border-image: linear-gradient(
+    45deg,
+    rgba(255, 230, 185, 0.95) 0%,
+    rgba(163, 228, 215, 0.95) 100%
+  ) 1 !important;
+}
+
+/* 3) Адаптив: тоньше рамка на мобильных */
+@media (max-width: 600px) {
+  main.issues-content .container > .intro-section {
+    padding: 1rem 0.75rem !important;
+    border-width: 2px !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ==========================================================================
+   Section: About Call-to-Action (.issues-content) — градиентная рамка «как вверху»
+   ========================================================================== */
+main.issues-content .question-section {
+  /* Обнуляем фон, если нужно оставить прозрачным */
+  background: transparent !important;
+
+  /* Основа для градиентной рамки */
+  border: 4px solid transparent !important;
+
+  /* Градиентная рамка: персиково-зеленый переход под тем же углом */
+  border-image: linear-gradient(
+    45deg,
+    rgba(255, 230, 185, 0.95) 0%,
+    rgba(163, 228, 215, 0.95) 100%
+  ) 1 !important;
+
+  /* Сохраняем скругления и отступы */
+  border-radius: var(--radius) !important;
+  padding: 3rem 1.5rem !important;
+  text-align: center !important;
+  margin: 2rem 0 !important;
+}
+
+/* Адаптив: уменьшаем толщину рамки на мобильных */
+@media (max-width: 600px) {
+  main.issues-content .question-section {
+    border-width: 2px !important;
+  }
+}
+
+

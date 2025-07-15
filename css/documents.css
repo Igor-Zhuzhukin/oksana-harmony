@@ -277,7 +277,6 @@ section.verification-info .info-content {
 }
 
 
-
 /* ========================================================================== 
    Убираем псевдо-разделитель перед verification-info 
    ========================================================================== */
@@ -354,3 +353,4 @@ main.documents-content .container > .intro-section {
     border-width: 3px !important;
   }
 }
+

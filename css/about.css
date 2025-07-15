@@ -13,3 +13,58 @@
   /* Отступы сверху-снизу, чтобы градиент был виден */
   padding: 60px 16px !important;
 }
+
+
+/* ==========================================================================
+   Section: Intro Highlight в approach-content — градиентная рамка
+   ========================================================================== */
+main.about-content .container > .about-intro {
+  /* Оставляем фон от предыдущего правила */
+
+  /* Добавляем прозрачную основу для рамки */
+  border: 4px solid transparent !important;
+  /* Накладываем градиент на рамку */
+  border-image: linear-gradient(
+    45deg,
+    rgba(255, 230, 185, 0.95) 0%,
+    rgba(163, 228, 215, 0.95) 100%
+  ) 1 !important;
+}
+/* Адаптив: уменьшаем толщину рамки на мобильных */
+@media (max-width: 600px) {
+  main.index-content .container > section#about {
+    border-width: 2px !important;
+  }
+}
+
+
+/* ==========================================================================
+   Section: About Call-to-Action (.about-cta) — градиентная рамка «как вверху»
+   ========================================================================== */
+main.about-content .about-cta {
+  /* Обнуляем фон, если нужно оставить прозрачным */
+  background: transparent !important;
+
+  /* Основа для градиентной рамки */
+  border: 4px solid transparent !important;
+
+  /* Градиентная рамка: персиково-зеленый переход под тем же углом */
+  border-image: linear-gradient(
+    45deg,
+    rgba(255, 230, 185, 0.95) 0%,
+    rgba(163, 228, 215, 0.95) 100%
+  ) 1 !important;
+
+  /* Сохраняем скругления и отступы */
+  border-radius: var(--radius) !important;
+  padding: 3rem 1.5rem !important;
+  text-align: center !important;
+  margin: 2rem 0 !important;
+}
+
+/* Адаптив: уменьшаем толщину рамки на мобильных */
+@media (max-width: 600px) {
+  main.about-content .about-cta {
+    border-width: 2px !important;
+  }
+}

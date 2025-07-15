@@ -90,6 +90,34 @@
 }
 
 /* ==========================================================================
+   Section: Problem Intro (#about) — только градиентная рамка
+   ========================================================================== */
+main.index-content .container > section#about {
+  /* Сохраняем фон неизменным, задаём только рамку */
+  background: inherit !important;
+  /* Основа для рамки */
+  border: 4px solid transparent !important;
+  /* Градиентная рамка: мятно-персиковый переход */
+  border-image: linear-gradient(
+    135deg,
+    rgba(255, 230, 185, 0.95) 0%,
+    rgba(163, 228, 215, 0.95) 100%
+  ) 1 !important;
+  border-radius: var(--radius) !important;
+  /* Учитываем padding внутри */
+  padding: 1.5rem !important;
+}
+
+/* Адаптив: уменьшаем толщину рамки на мобильных */
+@media (max-width: 600px) {
+  main.index-content .container > section#about {
+    border-width: 2px !important;
+  }
+}
+
+
+
+/* ==========================================================================
    Section: Benefits — force the hero gradient background
    ========================================================================== */
 .section.benefits {
@@ -126,13 +154,13 @@
 }
 /* задаём контекстный градиент через nth-child */
 .index-content .benefit-card:nth-child(1) {
-  background-image: linear-gradient(135deg, #A3E4D7 0%, #E8FCF9 100%); /* безоценочность :contentReference[oaicite:2]{index=2} */
+  background-image: linear-gradient(135deg, #88e3d1 0%, #a6ecee 100%); /* безоценочность :contentReference[oaicite:2]{index=2} */
 }
 .index-content .benefit-card:nth-child(2) {
-  background-image: linear-gradient(135deg, #FFDAB9 0%, #FFAB00 100%); /* индивидуальность :contentReference[oaicite:3]{index=3} */
+  background-image: linear-gradient(135deg, #e9c7aa 0%, #e3f189 100%); /* индивидуальность :contentReference[oaicite:3]{index=3} */
 }
 .index-content .benefit-card:nth-child(3) {
-  background-image: linear-gradient(135deg, #264653 0%, #2C3E50 100%); /* безопасность :contentReference[oaicite:4]{index=4} */
+  background-image: linear-gradient(135deg, #699cb0 0%, #886ccd 100%); /* безопасность :contentReference[oaicite:4]{index=4} */
 }
 .index-content .benefit-card {
   background-size: cover;
