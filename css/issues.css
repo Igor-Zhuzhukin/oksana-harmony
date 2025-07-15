@@ -79,3 +79,95 @@ main.issues-content .question-section {
 }
 
 
+
+
+/* ==========================================================================
+   Section: Important Note — стили по образцу important-note
+   ========================================================================== */
+
+section.important-note {
+  /* Убираем старый фон, на всякий случай */
+  background: none !important;  
+  /* Задаём новый жёлтый градиент */
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 244, 219, 0.95) 0%,
+    rgba(255, 230, 185, 0.95) 100%
+  ) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 40px 16px !important;
+  border-radius: var(--radius) !important;
+}
+
+section.important-note {
+  display: flex !important;
+  align-items: center !important;       /* центр по вертикали */
+  justify-content: center !important;   /* центр по горизонтали */
+  gap: 1rem !important;                 /* расстояние между иконкой и текстом */
+  text-align: left !important;
+}
+
+/* Иконка проверочных данных */
+section.important-note .note-icon {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  animation: icon-spin 4s linear infinite !important;  /* вращение */
+}
+
+/* Контент */
+section.important-note .note-content {
+  max-width: 800px;
+}  
+
+@keyframes icon-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+} 
+
+/* Адаптив: на узких экранах — в колонку */
+@media (max-width: 768px) {
+  section.important-note {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+  section.important-note .note-icon {
+    margin-bottom: 1rem !important;
+  }
+}
+
+
+section.important-note {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  gap: 1rem;
+  padding: 40px 16px !important;
+}
+
+section.important-note .note-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section.important-note .note-icon {
+  animation: icon-spin 5s linear infinite !important;
+}
+
+section.important-note {
+  padding-left: 60px !important;   /* увеличиваем левый padding */
+  padding-right: 60px !important;  /* симметрично и справа */
+}
+
+
+

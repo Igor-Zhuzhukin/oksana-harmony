@@ -210,6 +210,7 @@
 }
 
 
+
 /* ==========================================================================
    Section: Verification Info — принудительный жёлтый градиент
    ========================================================================== */
@@ -278,13 +279,6 @@ section.verification-info .info-content {
 
 
 /* ========================================================================== 
-   Убираем псевдо-разделитель перед verification-info 
-   ========================================================================== */
-.main .container > .section + .section.verification-info::before {
-  content: none !important;
-}
-
-/* ========================================================================== 
    Центрируем содержимое внутри секции и убираем смещение 
    ========================================================================== */
 section.verification-info {
@@ -305,7 +299,7 @@ section.verification-info .info-content {
 
 /* Восстанавливаем анимацию иконки */
 section.verification-info .info-icon {
-  animation: icon-spin 4s linear infinite !important;
+  animation: icon-spin 5s linear infinite !important;
 }
 
 
@@ -319,6 +313,8 @@ section.verification-info {
 section.verification-info .info-icon {
   margin-left: 1rem !important;    /* или любое другое значение */
 }
+
+
 
 
 /* ==========================================================================
