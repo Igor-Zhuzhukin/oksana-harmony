@@ -79,8 +79,6 @@ main.issues-content .question-section {
 }
 
 
-
-
 /* ==========================================================================
    Section: Important Note — стили по образцу important-note
    ========================================================================== */
@@ -170,4 +168,301 @@ section.important-note {
 }
 
 
+
+/* issues.css */
+/* =============================================== */
+/* Шаг 1: Расположение карточек (3 в ряд)          */
+/* =============================================== */
+
+/* Отключаем полосу перед issues-grid */
+main.section.issues-content
+  .container > .section + .section.issues-grid::before {
+  content: none !important;
+  display: none !important;
+}
+
+
+.section.issues-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* По умолчанию 1 колонка */
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+/* Десктоп: 3 карточки в ряд */
+@media (min-width: 992px) {
+  .section.issues-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+}
+
+/* Временно для отладки */
+.issue-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  min-height: 150px;
+}
+/* =============================================== */
+/* Шаг 2: Структура колонок                       */
+/* =============================================== */
+
+/* Скрываем .issues-column на десктопе */
+@media (min-width: 992px) {
+  .issues-column {
+    display: contents; /* "Разбираем" колонки */
+  }
+}
+
+/* Мобильная версия колонок */
+@media (max-width: 991px) {
+  .issues-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* =============================================== */
+/* Шаг 3: Стили карточек                          */
+/* =============================================== */
+
+.issue-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 220px;
+}
+
+/* Обеспечиваем одинаковую высоту на десктопе */
+@media (min-width: 992px) {
+  .issue-card {
+    height: 100%;
+  }
+}
+
+/* =============================================== */
+/* Шаг 4: Адаптивные отступы                      */
+/* =============================================== */
+
+@media (min-width: 1200px) {
+  .section.issues-grid {
+    margin-left: 80px; /* Сдвиг для верхней полосы */
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .section.issues-grid {
+    margin-left: 60px; /* Уменьшенный сдвиг */
+  }
+}
+
+@media (max-width: 991px) {
+  .section.issues-grid {
+    margin-left: 0;
+  }
+}
+
+/* =============================================== */
+/* Шаг 5: Стили контента карточек                 */
+/* =============================================== */
+
+.issue-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.issue-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.issue-content h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.issue-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* =============================================== */
+/* Шаг 6: Градиенты и цвета                       */
+/* =============================================== */
+
+/* Градиенты для карточек */
+.issue-card:nth-child(1) { background: linear-gradient(135deg, #88e3d1, #a6ecee); }
+.issue-card:nth-child(2) { background: linear-gradient(135deg, #e9c7aa, #e3f189); }
+.issue-card:nth-child(3) { background: linear-gradient(135deg, #699cb0, #886ccd); }
+.issue-card:nth-child(4) { background: linear-gradient(135deg, #f0a6c8, #f9c6e9); }
+.issue-card:nth-child(5) { background: linear-gradient(135deg, #a6c8f0, #c6e9f9); }
+.issue-card:nth-child(6) { background: linear-gradient(135deg, #c8a6f0, #e9c6f9); }
+
+/* Цвета текста */
+.issue-content h3,
+.issue-content p {
+  color: #fff;
+}
+
+.issue-content p {
+  opacity: 0.9;
+}
+
+/* Цвета иконок */
+.issue-card:nth-child(1) .issue-icon { color: #2dce89; }
+.issue-card:nth-child(2) .issue-icon { color: #fb6340; }
+.issue-card:nth-child(3) .issue-icon { color: #f5365c; }
+.issue-card:nth-child(4) .issue-icon { color: #11cdef; }
+.issue-card:nth-child(5) .issue-icon { color: #5e72e4; }
+.issue-card:nth-child(6) .issue-icon { color: #5603ad; }
+
+/* =============================================== */
+/* Шаг 7: Анимации и эффекты                      */
+/* =============================================== */
+
+/* Анимация пульсации иконок */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+.issue-icon {
+  animation: pulse 3s infinite;
+  transition: all 0.3s ease;
+}
+
+/* Эффекты при наведении */
+.issue-card {
+  transition: all 0.4s ease;
+}
+
+.issue-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.issue-card:hover .issue-icon {
+  transform: rotate(5deg) scale(1.1);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* =============================================== */
+/* Шаг 8: Адаптивная настройка                    */
+/* =============================================== */
+
+/* Планшеты (2 колонки) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .section.issues-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 767px) {
+  .section.issues-grid {
+    gap: 1.2rem;
+    padding: 1.2rem 0;
+  }
+  
+  .issue-card {
+    padding: 1.5rem 1rem;
+    min-height: 180px;
+  }
+  
+  .issue-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .issue-content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .issue-content p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Маленькие мобильные */
+@media (max-width: 480px) {
+  .issue-card {
+    padding: 1.3rem 0.8rem;
+  }
+  
+  .issue-content h3 {
+    font-size: 1.15rem;
+  }
+}
+
+/* =============================================== */
+/* Шаг 8: Адаптивная настройка                    */
+/* =============================================== */
+
+/* Планшеты (2 колонки) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .section.issues-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 767px) {
+  .section.issues-grid {
+    gap: 1.2rem;
+    padding: 1.2rem 0;
+  }
+  
+  .issue-card {
+    padding: 1.5rem 1rem;
+    min-height: 180px;
+  }
+  
+  .issue-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .issue-content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .issue-content p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Маленькие мобильные */
+@media (max-width: 480px) {
+  .issue-card {
+    padding: 1.3rem 0.8rem;
+  }
+  
+  .issue-content h3 {
+    font-size: 1.15rem;
+  }
+}  
 

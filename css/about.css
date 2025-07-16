@@ -15,21 +15,7 @@
 }
 
 
-/* ==========================================================================
-   Section: Intro Highlight в approach-content — градиентная рамка
-   ========================================================================== */
-main.about-content .container > .about-intro {
-  /* Оставляем фон от предыдущего правила */
 
-  /* Добавляем прозрачную основу для рамки */
-  border: 4px solid transparent !important;
-  /* Накладываем градиент на рамку */
-  border-image: linear-gradient(
-    45deg,
-    rgba(255, 230, 185, 0.95) 0%,
-    rgba(163, 228, 215, 0.95) 100%
-  ) 1 !important;
-}
 /* Адаптив: уменьшаем толщину рамки на мобильных */
 @media (max-width: 600px) {
   main.index-content .container > section#about {
@@ -66,5 +52,420 @@ main.about-content .about-cta {
 @media (max-width: 600px) {
   main.about-content .about-cta {
     border-width: 2px !important;
+  }
+}
+
+/* foto */
+
+/* 1. Контейнер flex для фотографии и текста */
+.about-intro {
+  display: flex;
+  align-items: center;    /* выравнивание по вертикали */
+  gap: 1.5rem;            /* расстояние между фото и текстом */
+  padding: 2rem 0;
+}
+
+/* 2. Круглая рамка для фотографии */
+.about-photo {
+  flex: 0 0 400px;        /* фиксированная ширина блока с фото */
+  height: 400px;          /* высота равна ширине — круг */
+  border-radius: 50%;     /* превращаем в круг */
+  overflow: hidden;       /* обрезаем выступающие края изображения */
+  
+  /* необязательно — можно добавить рамку или тень */
+  border: 2px solid var(--color-mint);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 3. Само изображение внутри кружка */
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* изображение заполнит круг, без искажений */
+  display: block;         /* убираем возможные пробелы снизу */
+}
+
+/* 4. Текстовая часть */
+.about-text {
+  flex: 1;                /* занимает всё оставшееся место */
+}
+
+/* 5. Адаптив: на узких экранах — стекать карточки */
+@media (max-width: 768px) {
+  .about-intro {
+    flex-direction: column;
+    text-align: center;   /* центрируем текст под фото */
+  }
+  .about-photo {
+    margin-bottom: 1rem;  /* отступ под фото */
+  }
+}
+
+/* Образование и квалификация */
+
+/* 1) Общие отступы и заголовок */
+.about-section {
+  padding: 3rem 0;
+}
+.about-section > h2 {
+  display: flex;
+  align-items: center;
+  font-size: 1.75rem;
+  color: var(--color-primary);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.about-section > h2 i {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+}
+
+/* 2) Сетка карточек */
+.about-section .qualification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* 3) Оформление карточки */
+.about-section .qualification-card {
+  background: var(--color-white);
+  border: 1px solid rgba(44,62,80,0.08);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  transition: transform 0.3s var(--transition), box-shadow 0.3s var(--transition);
+}
+@media (hover: hover) {
+  .about-section .qualification-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+}
+
+/* 4) Иконка в карточке */
+.about-section .qualification-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--color-accent);
+  background: var(--color-mint-light);
+  border-radius: 50%;
+}
+
+/* 5) Заголовок и текст */
+.about-section .qualification-card h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.25rem;
+  color: var(--color-secondary);
+}
+.about-section .qualification-card p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-primary);
+}
+
+/* 6) Ссылка на документы */
+.about-section .documents-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+.about-section .documents-link .btn-outline {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  transition: background 0.3s var(--transition), color 0.3s var(--transition);
+}
+@media (hover: hover) {
+  .about-section .documents-link .btn-outline:hover {
+    background: var(--color-accent);
+    color: var(--color-white);
+  }
+}
+
+/* 7) Адаптив */
+@media (max-width: 768px) {
+  .about-section .qualification-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 1) Градиенты для карточек */
+.about-section .qualification-card:nth-child(1) {
+  background-image: linear-gradient(135deg, #88e3d1, #a6ecee);
+}
+.about-section .qualification-card:nth-child(2) {
+  background-image: linear-gradient(135deg, #e9c7aa, #e3f189);
+}
+.about-section .qualification-card:nth-child(3) {
+  background-image: linear-gradient(135deg, #699cb0, #886ccd);
+}
+
+/* Общее для всех карточек: фон по градиенту, текст и иконки в белом */
+.about-section .qualification-card {
+  color: #fff;                        /* белый текст */
+  background-size: cover;             /* растягиваем градиент */
+  background-repeat: no-repeat;
+  position: relative;                 /* для анимаций */
+  overflow: hidden;
+}
+
+/* Белый заголовок и текст с прозрачностью */
+.about-section .qualification-card h3,
+.about-section .qualification-card p {
+  color: #fff;
+}
+.about-section .qualification-card p {
+  opacity: 0.9;
+}
+
+/* Иконки: индивидуальный цвет (можно убрать, если нужно белые) */
+.about-section .qualification-card:nth-child(1) .qualification-icon { color: #2dce89; }
+.about-section .qualification-card:nth-child(2) .qualification-icon { color: #fb6340; }
+.about-section .qualification-card:nth-child(3) .qualification-icon { color: #f5365c; }
+
+/* 2) Анимация появления карточек */
+.about-section .qualification-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s forwards;
+}
+.about-section .qualification-card:nth-child(1) { animation-delay: 0.1s; }
+.about-section .qualification-card:nth-child(2) { animation-delay: 0.2s; }
+.about-section .qualification-card:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3) Hover‑эффект: лёгкий подъём */
+@media (hover: hover) {
+  .about-section .qualification-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  }
+}
+
+/* 4) Иконка с пульсацией */
+.about-section .qualification-icon {
+  animation: pulse 2.5s infinite ease-in-out;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.1); opacity: 0.8; }
+}
+/* Вариант 1: flex-центрирование */
+.about-section > h2 {
+  display: flex;
+  align-items: center;      /* уже есть */
+  justify-content: center;  /* добавляем выравнивание по горизонтали */
+  gap: 0.5rem;
+  text-align: center;       /* страховка для многострочного текста */
+}
+
+/* Вариант 2: простой text-align */
+.about-section > h2 {
+  text-align: center;       /* центрирует содержимое заголовка */
+  display: block;           /* можно оставить или убрать flex */
+  margin: 10 auto;           /* центрирует сам блок, если задана ширина */
+}
+
+
+/*    */
+
+/* Центрируем содержимое секции */
+.about-section .development-content {
+  display: flex;
+  justify-content: center; /* по горизонтали */
+  padding: 2rem 0;
+}
+
+/* Ограничиваем ширину текста и центрируем его */
+.about-section .development-text {
+  max-width: 1000px;
+  text-align: center;
+}
+/* Сброс стандартных маркеров и выравнивание элементов списка */
+.development-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* центрируем каждый <li> */
+  gap: 1rem;            /* расстояние между пунктами */
+}
+
+/* Общие стили для пунктов */
+.development-text ul li {
+  position: relative;
+  padding-left: 1.5rem;       /* чтобы оставить место под точку */
+  font-size: 1rem;
+  color: var(--color-primary);
+  line-height: 1.6;
+  text-align: left;           /* текст внутри li выравнивается слева относительно кружка */
+}
+
+/* Псевдоэлемент-точка */
+.development-text ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;                  /* выравнивание по вертикали с текстом */
+  width: 0.6rem;
+  height: 0.6rem;
+  background: var(--color-accent);
+  border-radius: 50%;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+/* Анимация “пульсация” точки */
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+}
+
+
+
+/*     */ 
+
+
+/* ===== Общие отступы и заголовок ===== */
+.about-section {
+  padding: 3rem 0;
+}
+.about-section > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.75rem;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+.about-section > h2 i {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+}
+
+/* ===== Контейнер: текст сверху, иконки снизу ===== */
+.methods-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+/* Центрированный текст */
+.methods-text {
+  max-width: 1000px;
+  text-align: center;
+}
+
+/* ===== Список с анимированными точками ===== */
+.methods-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+.methods-text ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+.methods-text ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--color-accent);
+  border-radius: 50%;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+@keyframes pulseDot {
+  0%,100% { transform: scale(1); opacity: 1; }
+  50%     { transform: scale(1.3); opacity: 0.7; }
+}
+
+/* ===== Ряд иконок с градиентным фоном ===== */
+.methods-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.method-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.9rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+/* Градиенты для иконок */
+.methods-icons .method-icon:nth-child(1) {
+  background-image: linear-gradient(135deg, #88e3d1, #a6ecee);
+}
+.methods-icons .method-icon:nth-child(2) {
+  background-image: linear-gradient(135deg, #e9c7aa, #e3f189);
+}
+.methods-icons .method-icon:nth-child(3) {
+  background-image: linear-gradient(135deg, #699cb0, #886ccd);
+}
+.methods-icons .method-icon:nth-child(4) {
+  background-image: linear-gradient(135deg, #f0a6c8, #f9c6e9);
+}
+
+/* Анимированная иконка и hover‑эффект */
+.method-icon i {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  animation: bounce 3s infinite ease-in-out;
+}
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-8px); }
+}
+@media (hover: hover) {
+  .method-icon:hover {
+    transform: translateY(-6px) scale(1.05);
+  }
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 576px) {
+  .methods-icons {
+    justify-content: center;
   }
 }
