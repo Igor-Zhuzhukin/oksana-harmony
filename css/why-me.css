@@ -86,3 +86,240 @@ main.why-me-content .why-me-cta {
     border-width: 2px !important;
   }
 }
+
+/*                     */ 
+
+main.section.why-me-content
+  .container > .section + .section.advantages::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* 1) Контейнер сетки */
+.section.advantages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* отзывчивые колонки */
+  gap: 2rem;                                                 /* расстояние между карточками */
+  padding: 2rem 0;                                           /* отступы сверху/снизу */
+}
+
+/* 2) Общие стили карточки */
+.section.advantages .advantage {
+  position: relative;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* назначаем градиенты */
+.section.advantages .advantage:nth-child(1) {
+  background-image: linear-gradient(135deg, #88e3d1 0%, #a6ecee 100%);
+}
+.section.advantages .advantage:nth-child(2) {
+  background-image: linear-gradient(135deg, #e9c7aa 0%, #e3f189 100%);
+}
+.section.advantages .advantage:nth-child(3) {
+  background-image: linear-gradient(135deg, #699cb0 0%, #886ccd 100%);
+}
+
+/* 3) Стили для иконки */
+.section.advantages .advantage-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.85);
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  color: var(--color-primary);
+  animation: pulse 2s infinite;
+}
+
+/* keyframes для пульсации */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.1); opacity: 0.8; }
+}
+
+/* 4) Hover‑эффект */
+@media (hover: hover) {
+  .section.advantages .advantage:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  }
+}
+
+/* 5) Стили заголовка и абзаца */
+.section.advantages .advantage-content h2 {
+  margin: 0.75rem 0 0.5rem;
+  font-size: 1.25rem;
+  color: #000000;
+  text-align: center;
+}
+.section.advantages .advantage-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .section.advantages {
+    grid-template-columns: 1fr; /* одна колонка */
+  }
+  .section.advantages .advantage {
+    padding: 1.5rem 1rem;
+  }
+  .section.advantages .advantage-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .section.advantages .advantage-content h2 {
+    font-size: 1.15rem;
+  }
+}
+
+/* Заголовки в карточках Foundation – чёрный цвет */
+.section.foundation .foundation-card h3 {
+  color: #000 !important; /* устанавливаем чёрный цвет текста */
+}
+
+
+
+
+/** **/
+
+/* ==========================================================================
+   Section: Professional Foundation — отзывчивая сетка, градиенты и анимации
+   ========================================================================== */
+/* 1) Общие отступы и заголовок */
+.section.foundation {
+  padding: 3rem 0;
+  text-align: center;
+}
+.section.foundation > h2 {
+  font-size: 1.75rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+/* 2) Описание под заголовком */
+.section.foundation > p {
+  font-size: 1rem;
+  color: var(--color-secondary);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 3) Сетка карточек */
+.foundation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* 4) Карточка */
+.foundation-card {
+  position: relative;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #fff; /* текст белый для контраста с градиентом */
+}
+
+/* 5) Градиенты для каждой карточки */
+.foundation-card:nth-child(1) {
+  background-image: linear-gradient(135deg, #88e3d1, #a6ecee);
+}
+.foundation-card:nth-child(2) {
+  background-image: linear-gradient(135deg, #e9c7aa, #e3f189);
+}
+.foundation-card:nth-child(3) {
+  background-image: linear-gradient(135deg, #699cb0, #886ccd);
+}
+
+/* 6) Иконка */
+.foundation-card i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  animation: pulse 2s infinite ease-in-out;
+  color: #fff;
+  /* фоновый кружок */
+  background: rgba(255,255,255,0.25);
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  border-radius: 50%;
+}
+
+/* Пульсация иконки */
+@keyframes pulse {
+  0%,100% { transform: scale(1); opacity: 1; }
+  50%     { transform: scale(1.1); opacity: 0.8; }
+}
+
+/* 7) Заголовок и текст внутри карточки */
+.foundation-card h3 {
+  margin: 0.75rem 0 0.5rem;
+  font-size: 1.25rem;
+}
+.foundation-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* 8) Hover‑эффект */
+@media (hover: hover) {
+  .foundation-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  }
+}
+
+/* 9) Ссылка на документы */
+.section.foundation .documents-link {
+  text-align: center;
+}
+.section.foundation .documents-link .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  background: var(--color-accent);
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+@media (hover: hover) {
+  .section.foundation .documents-link .btn:hover {
+    background: darken(var(--color-accent), 10%);
+  }
+}
+
+/* 10) Адаптив */
+@media (max-width: 768px) {
+  .foundation-grid {
+    grid-template-columns: 1fr;
+  }
+  .section.foundation > h2 {
+    font-size: 1.5rem;
+  }
+}

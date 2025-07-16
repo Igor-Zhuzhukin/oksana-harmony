@@ -198,7 +198,7 @@ main.index-content .container > section#about {
 .index-content .benefit-card h3 {
   margin: 0.75rem 0 0.5rem;
   font-size: 1.25rem;
-  color: #fff; /* на градиентном фоне — белый текст :contentReference[oaicite:7]{index=7} */
+  color: #000000; /* на градиентном фоне — белый текст :contentReference[oaicite:7]{index=7} */
 }
 .index-content .benefit-card p {
   font-size: 1rem;
