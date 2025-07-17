@@ -57,49 +57,51 @@ main.about-content .about-cta {
 
 /* foto */
 
-/* 1. Контейнер flex для фотографии и текста */
+/* === Вариант B: уменьшение фото на 30% === */
+
+/* 1. Сетка для десктопа */
 .about-intro {
-  display: flex;
-  align-items: center;    /* выравнивание по вертикали */
-  gap: 1.5rem;            /* расстояние между фото и текстом */
-  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 3rem 0;
 }
 
-/* 2. Круглая рамка для фотографии */
+/* 2. Обёртка фото */
 .about-photo {
-  flex: 0 0 400px;        /* фиксированная ширина блока с фото */
-  height: 400px;          /* высота равна ширине — круг */
-  border-radius: 50%;     /* превращаем в круг */
-  overflow: hidden;       /* обрезаем выступающие края изображения */
-  
-  /* необязательно — можно добавить рамку или тень */
-  border: 2px solid var(--color-mint);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 70%;              /* вместо 100% колонки: 70% → фото на 30% уже */
+  margin: 0 auto;          /* центрируем внутри первой колонки */
+  border-radius: 50%;      /* круглая форма */
+  overflow: hidden;
 }
 
-/* 3. Само изображение внутри кружка */
+/* 3. Изображение */
 .about-photo img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;      /* изображение заполнит круг, без искажений */
-  display: block;         /* убираем возможные пробелы снизу */
+  height: auto;
+  object-fit: cover;
 }
 
-/* 4. Текстовая часть */
-.about-text {
-  flex: 1;                /* занимает всё оставшееся место */
-}
 
-/* 5. Адаптив: на узких экранах — стекать карточки */
+/* 5. Мобильная версия */
 @media (max-width: 768px) {
   .about-intro {
-    flex-direction: column;
-    text-align: center;   /* центрируем текст под фото */
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
   .about-photo {
-    margin-bottom: 1rem;  /* отступ под фото */
+    width: 100%;           /* фото на всю ширину */
+    border-radius: 0;      /* прямоугольник */
+  }
+  .about-text {
+    background: var(--color-mint-light);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    text-align: center;
   }
 }
+
 
 /* Образование и квалификация */
 
