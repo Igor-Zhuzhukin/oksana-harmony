@@ -427,7 +427,7 @@ main.section.index-content .container > .section#test .container {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   margin: 2rem auto 0;        /* центр внутри родителя */
   padding: 2rem 1.5rem;
   background: rgba(255,255,255,0.95);
