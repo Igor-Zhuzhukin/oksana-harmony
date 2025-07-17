@@ -6,6 +6,7 @@ import initGallery    from './modules/gallery.js';
 import initScroll     from './modules/scroll.js';
 import initForm       from './modules/form.js';
 import initLightbox   from './modules/lightbox-init.js';
+import initFaq        from './modules/faq.js';
 
 /**
  * Возвращает полный URL к partial-файлу
@@ -78,6 +79,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 6) Остальные модули — всегда
   console.log('🚀 initGallery()'); initGallery();
   console.log('🚀 initScroll()');  initScroll();
+  console.log('🚀 initFaq()');    initFaq();
 
   console.log('🎉 Всё загружено и запущено');
 });

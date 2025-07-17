@@ -140,6 +140,7 @@ main.index-content .container > section#about {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* отзывчивые колонки :contentReference[oaicite:0]{index=0} */
   gap: 2rem;
   padding: 2rem 0;
+  text-align: center;
 }
 
 /* 1) Градиенты для карточек */
