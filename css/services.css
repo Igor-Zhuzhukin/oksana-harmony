@@ -36,3 +36,132 @@
   border-radius: var(--radius);
 }
 
+/* ==========================================================================
+   Центрирование и стилизация формы консультации
+   ========================================================================== */
+
+/* 1) Центрируем заголовок и форму */
+.consultation-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* весь контент по центру */
+  padding: 3rem 1.5rem;       /* внутренние отступы сохраняем фон */
+}
+.consultation-form > h2 {
+  font-size: 1.75rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.consultation-form .booking-form-content {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* 2) Группы полей */
+.booking-form-content .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.booking-form-content label {
+  font-size: 1rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.5rem;
+}
+.booking-form-content input[type="text"],
+.booking-form-content input[type="tel"] {
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid rgba(44,62,80,0.2);
+  border-radius: var(--radius);
+  background: #fff;
+  transition: border-color 0.2s ease;
+}
+.booking-form-content input[type="text"]:focus,
+.booking-form-content input[type="tel"]:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+/* 3) Чекбокс согласия */
+.booking-form-content .checkbox-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  color: var(--color-secondary);
+}
+.checkbox-group input[type="checkbox"] {
+  margin-right: 0.5rem;
+  transform: scale(1.1);
+}
+
+/* 4) Ошибки валидации */
+.error-message {
+  color: #d9534f;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: none;  /* показывайте через JS при ошибке */
+}
+
+/* 5) Кнопка отправки */
+.booking-form-content button[type="submit"] {
+  display: inline-block;
+  margin: 1rem auto 0;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: filter 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+.booking-form-content button[type="submit"]:hover {
+  filter: brightness(0.9);
+  transform: translateY(-2px);
+}
+
+/* 6) Адаптив */
+@media (max-width: 480px) {
+  .consultation-form {
+    padding: 2rem 1rem;
+  }
+  .consultation-form > h2 {
+    font-size: 1.5rem;
+  }
+  .booking-form-content input {
+    font-size: 0.95rem;
+  }
+  .booking-form-content button[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+  }
+}
+
+/* Центрируем кнопку внутри .booking-form-content */
+.consultation-form .booking-form-content {
+  text-align: center;  /* выравниваем всё содержимое по центру */
+}
+
+.consultation-form .booking-form-content button[type="submit"] {
+  margin: 1.5rem auto 0;  /* авто‑отступ по бокам ставит кнопку по центру */
+  display: inline-block;  /* чтобы margin:auto сработал по горизонтали */
+}
+
+
+/* Центрируем текст внутри полей ввода */
+.consultation-form .booking-form-content input[type="text"],
+.consultation-form .booking-form-content input[type="tel"] {
+  text-align: center;
+}
+.consultation-form .booking-form-content input::placeholder {
+  text-align: center;
+}
