@@ -166,7 +166,7 @@ main.section.why-me-content
 .section.advantages .advantage-content p {
   font-size: 1rem;
   line-height: 1.6;
-  color: rgba(255,255,255,0.9);
+  color: rgba(0, 0, 0, 0.9);
   text-align: center;
 }
 @media (max-width: 768px) {
@@ -239,7 +239,7 @@ main.section.why-me-content
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
-  color: #fff; /* текст белый для контраста с градиентом */
+  color: #000000; /* текст белый для контраста с градиентом */
 }
 
 /* 5) Градиенты для каждой карточки */

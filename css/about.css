@@ -223,7 +223,7 @@ main.about-content .about-cta {
 /* Белый заголовок и текст с прозрачностью */
 .about-section .qualification-card h3,
 .about-section .qualification-card p {
-  color: #fff;
+  color: #000000;
 }
 .about-section .qualification-card p {
   opacity: 0.9;

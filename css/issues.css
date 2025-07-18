@@ -321,7 +321,7 @@ main.section.issues-content
 /* Цвета текста */
 .issue-content h3,
 .issue-content p {
-  color: #fff;
+  color: #000000;
 }
 
 .issue-content p {
